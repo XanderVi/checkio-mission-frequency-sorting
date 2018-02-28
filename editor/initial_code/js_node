@@ -1,8 +1,6 @@
 "use strict";
 
-function checkio(buildings) {
-    // find the highest building
-
+function checkio(numbers) {
     // your code here
     return 0;
 }
@@ -11,17 +9,8 @@ var assert = require('assert');
 if (!global.is_checking) {
 
     // These "asserts" are used for self-checking and not for an auto-testing
-    assert.equal(checkio([
-        [0, 0, 1, 0],
-        [1, 0, 1, 0],
-        [1, 1, 1, 0],
-        [1, 1, 1, 1]
-    ]), "3 4")
-    assert.equal(checkio([
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 1]
-    ]), "4 1")
+    assert.equal(checkio([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+    assert.equal(checkio([3, 4, 11, 13, 11, 4, 4, 7, 3]), [4, 4, 4, 3, 3, 11, 11, 7, 13])
+    assert.equal(checkio([99, 99, 55, 55, 21, 21, 10, 10]), [10, 10, 21, 21, 55, 55, 99, 99])
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
