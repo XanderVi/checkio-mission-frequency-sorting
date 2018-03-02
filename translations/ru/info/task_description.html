@@ -23,11 +23,14 @@
 <div class="for_info_only">
 <p>
 <strong>Пример:</strong>
-
-<pre class="brush: python">checkio([5, 3, 8, 11, 5, 6, 6, 5]) == [5, 5, 5, 6, 6, 3, 8, 11]
-</pre>
-
 </p>
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">frequencySorting([5, 3, 8, 11, 5, 6, 6, 5]) == [5, 5, 5, 6, 6, 3, 8, 11]
+</pre>
+{% else %}
+<pre class="brush: python">frequency_sorting([5, 3, 8, 11, 5, 6, 6, 5]) == [5, 5, 5, 6, 6, 3, 8, 11]
+</pre>
+{% endif %}
 </div>
 
 <!-- Here you can explain how it can be used in development and what is usage of this. -->
