@@ -7,6 +7,8 @@ function frequencySorting(numbers) {
 
 var assert = require('assert');
 if (!global.is_checking) {
+    console.log('Example:')
+    console.log(frequencySorting([1, 2, 3, 4, 5]))
 
     // These "asserts" are used for self-checking and not for an auto-testing
     assert.deepEqual(frequencySorting([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
