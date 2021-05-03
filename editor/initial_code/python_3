@@ -1,4 +1,7 @@
-def frequency_sorting(numbers):
+from typing import List
+
+
+def frequency_sorting(numbers: List[int]) -> List[int]:
     #replace this for solution
     return numbers
 
