@@ -1,0 +1,142 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>The general idea is simple - to define sorting rule correctly and to use it as a key in sorting function.</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What should I start from?
+    </div>
+    <div class="answer">
+        <p>Use build-in <a target="_blank" href="https://www.w3schools.com/python/ref_func_sorted.asp">sorted()</a> function. It returns sorted list or another Iterable and has <b class="code">key</b> argument, which defines the rule of sorting (that's exactly what you need).</p>
+        <pre class="brush: python">
+result = sorted(numbers, key=...)        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok. What to do next?
+    </div>
+    <div class="answer">
+        <p><b class="code">Key</b>  argument (sorting rule) is a function, which compares elements by some parameter and chooses, what element goes first. To define specific function, use <b class="code">lambda</b> expression (anonymous function), that takes each element in the list.</p>
+        <pre class="brush: python">
+result = sorted(numbers, key=lambda i: ...)        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Help me do define sorting rule.
+    </div>
+    <div class="answer">
+        <p>Description says, that you need to sort elements according to their frequency - number of occurrences in the list. A common way to count number of the same element in the list is to use its <a target="_blank" href="https://www.w3schools.com/python/ref_list_count.asp">list.count()</a> method.</p>
+        <pre class="brush: python">
+numbers = [1, 2, 3, 2]
+print(numbers.count(3))
+        </pre>
+        <div class="output">
+            Output
+            <pre>
+1
+            </pre>
+        </div>
+        <p>So, you need to use this method for sorting.</p>
+        <pre class="brush: python">
+result = sorted(numbers, key=lambda i: numbers.count(i))        
+        </pre> 
+        <p>The default sorting order is increasing, so an element with 1 occurrence will
+        go before the one with 2. But according to the description you need the 
+        opposite - more frequent element should go first. To get this do such easy
+        yet tricky thing - use result of <b class="code">count</b>  with minus! So, the element with
+        "-2" frequency goes before the one with "-1" frequency, since -2 is less then -1.</p>
+        <pre class="brush: python">
+result = sorted(numbers, key=lambda element: -numbers.count(element))        
+        </pre> 
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        But what to do, when two or more elements have equal frequency?
+    </div>
+    <div class="answer">
+        <p>The mission description says, you need to sort them by their natural order.
+        So you just need to put <b class="code">i</b> itself as the second sorting
+        parameter. Since smaller element should go earlier than bigger
+        (ascending order), no need to use minus, default sorting order is fine.</p>
+        <pre class="brush: python">
+result = sorted(numbers, key=lambda i: -numbers.count(i), i)
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>One small step about code remains: sorting function should be a single object, but now
+        you have two - <b class="code">-numbers.count(i)</b> and <b class="code">i</b>. To make it works, join them in a tuple or list. Don't forget to wrap the code into function expression (with type hints) and return the expressions you built. So, here is the solution:</p>
+        <pre class="brush: python">
+from typing import Iterable 
+
+
+def frequency_sorting(numbers: list[int]) -> Iterable[int]:
+
+    result = sorted(numbers, key=lambda i: (-numbers.count(i), i))
+
+    return result
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            In this solution there are two steps: first to sort <b class="code">numbers</b> ascending, then descending by frequency. Pay attention to the argument <b class="code">reverse</b> which is <b class="code">False</b> by default and the absence of <b class="code">lambda</b> expression.
+        </p>
+        <pre class="brush: python">
+from typing import Iterable 
+
+
+def frequency_sorting(numbers: list[int]) -> Iterable[int]:
+
+    result = sorted(sorted(numbers), key=numbers.count, reverse=True)
+
+    return result
+        </pre>
+        <p>
+            <b class="code">Counter</b> class from <b class="code">collections</b> module creates a dictionary with unique elements as keys and their frequency as values. Pairs ordered by natural order, since yor sort the list before. So you take all elements, sort them by key - frequency of each element (<b class="code">c.get</b> gets for each element its value from <b class="code">c</b>) with descending order.</p>
+        </p>
+        <pre class="brush: python">
+from typing import Iterable
+from collections import Counter
+
+
+def frequency_sorting(numbers: list[int]) -> Iterable[int]:
+
+    c = Counter(sorted(numbers))
+    result = sorted(c.elements(), key=c.get, reverse = True)
+
+    return result
+        </pre>
+        <p>Click "Best solutions" at mission menu and see a lot of other
+        interesting solutions!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it!
+    </div>
+</div>
+</body>
