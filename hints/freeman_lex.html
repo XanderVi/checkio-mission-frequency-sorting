@@ -1,7 +1,7 @@
 <body data-author="freeman_lex">
 <div class="question-answer">
     <div class="question">
-        I have no idea how to start solving this mission.
+        <i>I have no idea how to start solving this mission.</i>
     </div>
     <div class="answer">
         <p>The general idea is simple - to define sorting rule correctly and to use it as a key in sorting function.</p>
@@ -9,10 +9,10 @@
 </div>
 <div class="question-answer">
     <div class="question">
-        What should I start from?
+        <i>What should I start from?</i>
     </div>
     <div class="answer">
-        <p>Use build-in <a target="_blank" href="https://www.w3schools.com/python/ref_func_sorted.asp">sorted()</a> function. It returns sorted list or another Iterable and has <b class="code">key</b> argument, which defines the rule of sorting (that's exactly what you need).</p>
+        <p>Use built-in <a target="_blank" href="https://www.w3schools.com/python/ref_func_sorted.asp">sorted()</a> function. It returns sorted list or another Iterable and has <b class="code">key</b> argument, which defines the rule of sorting (that's exactly what you need).</p>
         <pre class="brush: python">
 result = sorted(numbers, key=...)        
         </pre>
@@ -20,7 +20,7 @@ result = sorted(numbers, key=...)
 </div>
 <div class="question-answer">
     <div class="question">
-        Ok. What to do next?
+        <i>Ok. What to do next?</i>
     </div>
     <div class="answer">
         <p><b class="code">Key</b>  argument (sorting rule) is a function, which compares elements by some parameter and chooses, what element goes first. To define specific function, use <b class="code">lambda</b> expression (anonymous function), that takes each element in the list.</p>
@@ -31,7 +31,7 @@ result = sorted(numbers, key=lambda i: ...)
 </div>
 <div class="question-answer">
     <div class="question">
-        Help me do define sorting rule.
+        <i>Help me do define sorting rule.</i>
     </div>
     <div class="answer">
         <p>Description says, that you need to sort elements according to their frequency - number of occurrences in the list. A common way to count number of the same element in the list is to use its <a target="_blank" href="https://www.w3schools.com/python/ref_list_count.asp">list.count()</a> method.</p>
@@ -61,7 +61,7 @@ result = sorted(numbers, key=lambda element: -numbers.count(element))
 </div>
 <div class="question-answer">
     <div class="question">
-        But what to do, when two or more elements have equal frequency?
+        <i>But what to do, when two or more elements have equal frequency?</i>
     </div>
     <div class="answer">
         <p>The mission description says, you need to sort them by their natural order.
@@ -75,7 +75,7 @@ result = sorted(numbers, key=lambda i: -numbers.count(i), i)
 </div>
 <div class="question-answer">
     <div class="question">
-        So, how my final solution should look like?
+        <i>So, how my final solution should look like?</i>
     </div>
     <div class="answer">
         <p>One small step about code remains: sorting function should be a single object, but now
@@ -94,8 +94,8 @@ def frequency_sorting(numbers: list[int]) -> Iterable[int]:
 </div>
 <div class="question-answer">
     <div class="question">
-        Show me more solutions!<br />
-        'Cause I wanna be a real Python Ninnjaa!
+        <i>Show me more solutions!<br />
+        'Cause I wanna be a real Python Ninnjaa!</i>
     </div>
     <div class="answer">
         <p>Sure, grab it!</p>
@@ -113,7 +113,7 @@ def frequency_sorting(numbers: list[int]) -> Iterable[int]:
     return result
         </pre>
         <p>
-            <b class="code">Counter</b> class from <b class="code">collections</b> module creates a dictionary with unique elements as keys and their frequency as values. Pairs ordered by natural order, since yor sort the list before. So you take all elements, sort them by key - frequency of each element (<b class="code">c.get</b> gets for each element its value from <b class="code">c</b>) with descending order.</p>
+            <b class="code">Counter</b> class from <b class="code">collections</b> module creates a dictionary with unique elements as keys and their frequency as values. Pairs ordered by natural order, since you sort the list before. So you take all elements, sort them by key - frequency of each element (<b class="code">c.get</b> gets for each element its value from <b class="code">c</b>) with descending order.</p>
         </p>
         <pre class="brush: python">
 from typing import Iterable
@@ -127,13 +127,13 @@ def frequency_sorting(numbers: list[int]) -> Iterable[int]:
 
     return result
         </pre>
-        <p>Click "Best solutions" at mission menu and see a lot of other
-        interesting solutions!</p>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other
+        interesting solutions!</b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Thanks! I know and understand more now! Everything works fine!
+        <i>Thanks! I know and understand more now! Everything works fine!</i>
     </div>
     <div class="answer">
         Glad to hear it!

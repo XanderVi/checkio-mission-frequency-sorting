@@ -1,7 +1,7 @@
 <body data-author="freeman_lex">
 <div class="question-answer">
     <div class="question">
-        Я уявлення не маю, як розв'язати цю місію.
+        <i>Я уявлення не маю, як розв'язати цю місію.</i>
     </div>
     <div class="answer">
         <p>Загалом, ідея доволі проста - правильно визначити правило сортування і 
@@ -10,7 +10,7 @@
 </div>
 <div class="question-answer">
     <div class="question">
-        З чого ж мені почати?
+        <i>З чого ж мені почати?</i>
     </div>
     <div class="answer">
         <p>Використай вбудовану функцію <a target="_blank" href="https://www.w3schools.com/python/ref_func_sorted.asp">sorted()</a>. Вона повертає відсортований список або інший ітерований об'єкт і має аргумент <b class="code">key</b>, який визначає правило сортування (а це ж саме те, що тобі потрібно!).</p>
@@ -21,7 +21,7 @@ result = sorted(numbers, key=...)
 </div>
 <div class="question-answer">
     <div class="question">
-        Добре. Що робити далі?
+        <i>Добре. Що робити далі?</i>
     </div>
     <div class="answer">
         <p>Аргумент <b class="code">key</b> (правило сортування) це функція, яка порівнює елементи за певним параметром і обирає, який елемент йде першим. Щоб встановити цю функцію використай <b class="code">lambda</b> вираз (анонімну функцію), яка прийматиме кожен елемент списку як аргумент.</p>
@@ -32,7 +32,7 @@ result = sorted(numbers, key=lambda i: ...)
 </div>
 <div class="question-answer">
     <div class="question">
-        Допоможи мені встановити правило сортування.
+        <i>Допоможи мені встановити правило сортування.</i>
     </div>
     <div class="answer">
         <p>В описі місії сказано, що тобі потрібно відсортувати елементи відповідно до їх
@@ -64,7 +64,7 @@ result = sorted(numbers, key=lambda i: -numbers.count(i))
 </div>
 <div class="question-answer">
     <div class="question">
-        Але що робити, коли два або більше елементів мають однакову частоту?
+        <i>Але що робити, коли два або більше елементів мають однакову частоту?</i>
     </div>
     <div class="answer">
         <p>Знову ж таки, опис говорить, що тобі потрібно відсортувати їх у природному порядку. Просто додай <b class="code">i</b> як другий параметр сортування. Оскільки менший елемент має йти раніше, ніж більший (сортування за зростанням), нам не потрібно використовувати мінус, порядок сортування за замовчуванням цілком підходить.</p>
@@ -75,7 +75,7 @@ result = sorted(numbers, key=lambda i: -numbers.count(i), i)
 </div>
 <div class="question-answer">
     <div class="question">
-        То як має виглядати моє остаточне рішення?
+        <i>То як має виглядати моє остаточне рішення?</i>
     </div>
     <div class="answer">
         <p>Один маленький крок щодо коду лишився: функція сортування має бути одним об'єктом,
@@ -94,8 +94,8 @@ def frequency_sorting(numbers: list[int]) -> Iterable[int]:
 </div>
 <div class="question-answer">
     <div class="question">
-        Покажи мені більше розв'язків!<br />
-        Адже я хочу бути справжнім Python Ніндзею!
+        <i>Покажи мені більше розв'язків!<br />
+        Адже я хочу бути справжнім Python Ніндзею!</i>
     </div>
     <div class="answer">
         <p>Звісно, тримай!</p>
@@ -123,12 +123,12 @@ def frequency_sorting(numbers: list[int]) -> Iterable[int]:
 
     return result
         </pre>
-        <p>Тисни "Best solutions" в меню місії і побачиш багато інших цікавих розв'язків!</p>
+        <p><b>Тисни "Best solutions" в меню місії і побачиш багато інших цікавих розв'язків!</b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+        <i>Дякую! Тепер я знаю і розумію більше! Все працює як слід!</i>
     </div>
     <div class="answer">
         Приємно це чути!
